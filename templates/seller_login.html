@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Vendor Login{% endblock %}
+
+{% block content %}
+     
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">     
+<h2 style="padding-left: 200px; color: red;"> {{msg}}</h2>   
+<br>
+
+<h1 style="padding-left: 200px; color: white;">Vendor Login </h1>
+<form action="/seller_login" method="post" >
+    {%csrf_token%}
+    <div  style="padding-left: 200px;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <div class="" style="">
+            <input type="submit" value="Login" class="btn btn-lg" style="border-color: white;">
+        </div>
+    </div>
+</form> 
+</div>
+</div>           
+</div>
+{% endblock %}

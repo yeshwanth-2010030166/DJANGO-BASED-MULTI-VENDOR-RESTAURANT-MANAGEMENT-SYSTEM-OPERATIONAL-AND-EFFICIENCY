@@ -1,0 +1,8 @@
+django
+mysql-connector
+
+
+python3.8
+
+EX-Seller   = seller1@gmail.com , Seller1@12
+Ex-User     = user1@gmail.com   , User1@123

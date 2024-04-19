@@ -1,0 +1,50 @@
+{% extends "base2.html" %}
+
+{% block title %}Vendor Login{% endblock %}
+
+{% block content %}
+     
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">  
+
+        <h1 style="color: white;">Seller Profile</h1>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Seller Id</th>
+                        <th>UsedName</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>DOB</th>
+                        <th>Mobile</th>
+                        <th>Restaurent Name</th>
+                        <th>Restaurent Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for seller_i in seller_info %}
+                    <tr>
+                        <form action="/seller_addres" method="post" autocomplete="off">
+                            {%csrf_token%}
+                            <td><input name="takeid" size= "5" style="color:black;border:none"  value="{{ seller_i.0 }}" readonly/></td>
+                            <td style="background-color: white;">{{ seller_i.1 }}</td>
+                            <td style="background-color: white;">{{ seller_i.2 }}</td>
+                            <td style="background-color: white;">{{ seller_i.3 }}</td>
+                            <td style="background-color: white;">{{ seller_i.4 }}</td>
+                            <td style="background-color: white;">{{ seller_i.5 }}</td>
+                            <td style="background-color: white;"> <input name="resname" size= "15" style="color:black;border:none"  required /></td>
+                            <td style="background-color: white;"> <input name="resloc" size= "15" style="color:black;border:none"  required /></td>
+                            <td style="background-color: white;"><input type="submit" value="Update Profile"  class="btn btn-danger" style="width: 200px;"></td>   
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h3 style="color: lime;">{{msg}}</h3>   
+        </div>
+        
+    </div>           
+</div>
+{% endblock %}

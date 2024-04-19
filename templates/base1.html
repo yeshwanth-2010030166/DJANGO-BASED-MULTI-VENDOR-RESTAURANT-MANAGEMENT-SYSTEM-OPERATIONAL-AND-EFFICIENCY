@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>{% block title %}MPWB06-User{% endblock %}</title>
+    <link href=" static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="static/assets/css/templatemo-finance-business.css">
+    <link rel="stylesheet" href="static/assets/css/owl.css">
+  
+    <style>
+        .sidebar {
+            width: 250px; 
+            height: 100%; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            color: #fff; 
+            padding-top: 300px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff; 
+            font-size: 20px;
+        }
+
+        .sidebar a:hover {
+            background-color: #555; 
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 10px; 
+        }
+        th, td {
+            border: 1px solid white; 
+            color: black;
+        }
+        th {
+            background-color:white;
+        }
+        p {
+            font-size: 20px; 
+        }
+
+    </style> 
+  </head>
+
+  <body>
+
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="/user_allfood">Views All Foods
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user_bookings"> Bookings</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/user_login">User Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="/">Logout</a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="main-banner header-text" id="top">
+      <div class="Modern-Slider">
+        {% block content %}{% endblock %}
+      </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src=" static/assets/js/jquery.min.js"></script>
+    <script src=" static/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src=" static/assets/js/custom.js"></script>
+    <script src=" static/assets/js/owl.js"></script>
+    <script src=" static/assets/js/slick.js"></script>
+    <script src=" static/assets/js/accordions.js"></script>
+
+
+  </body>
+</html>

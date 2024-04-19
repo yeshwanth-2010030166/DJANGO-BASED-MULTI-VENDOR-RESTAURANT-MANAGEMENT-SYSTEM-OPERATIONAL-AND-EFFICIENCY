@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">        
+    <h2 style="padding-left: 200px; color: red;"> {{msg}}</h2>   
+    <br>
+
+    <h1 style="padding-left: 200px; color: white;">Register </h1>
+    <form action="/register" method="post" id="formid">
+        {%csrf_token%}
+        <div  style="padding-left: 200px;">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <select name="selloruser" id="selloruser"  class= "form-control" placeholder="Vendor or User"  style="width: 200px; height: 50px">   
+                            <option value="user"> User</option>
+                            <option value="seller"> Vendor</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input type="name" class="form-control" name="name" placeholder="Used Name" required="">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input type="date" class="form-control" name="dob" placeholder="Date of Birth" required="">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input type="tel" class="form-control" name="mobile" placeholder="Number" pattern="[0-9]{10}" maxlength="10"  required="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="" style="">
+                <input type="submit" value="Register" class="btn btn-lg" style="border-color: white; ">
+            </div>
+        </div>
+    </form> 
+</div>
+</div>           
+</div>
+{% endblock %}

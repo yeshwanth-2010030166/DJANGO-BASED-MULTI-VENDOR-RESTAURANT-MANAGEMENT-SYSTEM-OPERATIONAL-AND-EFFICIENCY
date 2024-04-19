@@ -1,0 +1,39 @@
+{% extends "base1.html" %}
+
+{% block title %}User All Foods{% endblock %}
+
+{% block content %}
+     
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">    
+            <h1 style="color: white;">All Bookings</h1>
+            <div style="overflow-y: scroll; max-height: 500px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Restaurant</th>
+                            <th>Location</th>
+                            <th>Food </th>
+                            <th>Table</th>
+                            <th>Booked Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food in foods_data %}
+                            <tr>
+                                <td style="background-color: white;">{{food.1 }} </td>
+                                <td style="background-color: white;">{{food.2 }} </td>
+                                <td style="background-color: white;">{{ food.5 }}</td>
+                                <td style="background-color: white;">{{ food.6 }}</td>
+                                <td style="background-color: white;">{{  food.7|date:"Y-m-d" }}</td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>           
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base2.html" %}
+
+{% block title %}Vendor Add Foods{% endblock %}
+
+{% block content %}
+     
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">     
+<br>
+
+<h1 style="padding-left: 200px; color: white;">Vendor Add Foods </h1>
+<form action="/seller_addfoods" method="post"  enctype="multipart/form-data">
+    {%csrf_token%}
+    <div  style="padding-left: 200px;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="file" class="form-control" name="fimage" placeholder="Food Image" accept=".jpg, .png, .jpeg"   required>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="fanme" class="form-control" name="fname" placeholder="Food name" required>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea type="description" class="form-control" name="fdesc" rows="4" placeholder="Food Description" required></textarea>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <div >
+            <input type="submit" value="Add Food" class="btn btn-lg" style="border-color: white;">
+        </div>
+    </div>
+</form> 
+<h3 style="color: lime;" >{{msg}}</h3>
+</div>
+</div>           
+</div>
+{% endblock %}

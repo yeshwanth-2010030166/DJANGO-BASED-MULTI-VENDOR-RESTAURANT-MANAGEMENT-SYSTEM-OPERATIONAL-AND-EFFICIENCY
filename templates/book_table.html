@@ -1,0 +1,46 @@
+{% extends "base1.html" %}
+
+{% block title %}User Book Food with Table{% endblock %}
+
+{% block content %}
+   
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">     
+<h2 style="padding-left: 200px; color: red;"> {{msg}}</h2>   
+<br>
+
+<h1 style="padding-left: 200px; color: white;">Vendor Add Foods </h1>
+<form action="/book_table" method="post" >
+    {%csrf_token%}
+    <div  style="padding-left: 200px;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="food" value="{{ food_data.4 }}" readonly >
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <select type="text" class="form-control" name="table" placeholder="Table" required>
+                        <option value="T1">T1</option>
+                        <option value="T2">T2</option>
+                        <option value="T3">T3</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <div >
+            <input type="submit" value="Book Table" class="btn btn-lg" style="border-color: white;">
+        </div>
+    </div>
+</form> 
+</div>
+</div>           
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base2.html" %}
+
+{% block title %}User All Foods{% endblock %}
+
+{% block content %}
+     
+<div class="item item-1">
+    <div class="img-fill">
+        <div class="text-content">    
+            <h1 style="color: white;">All Bookings</h1>
+            <div style="overflow-y: scroll; max-height: 500px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Food ID</th>
+                            <th>User EmailId</th>
+                            <th>Food Id</th>
+                            <th>Food </th>
+                            <th>Table</th>
+                            <th>Booked Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food in foods_data %}
+                            <tr>
+                                <form action="/seller_updatebookingsss" method="post" >
+                                    {%csrf_token%}
+                                    <td style="background-color: white;"><input name="resid" size= "2" style="color:black; border:none" value="{{food.0 }}" readonly /></td>
+                                    <td style="background-color: white;"><input name="userid" size= "5" style="color:black; border:none" value="{{food.3 }}" readonly /> </td>
+                                    <td style="background-color: white;"><input name="fid" size= "5" style="color:black; border:none" value="{{food.4 }}" readonly /></td>
+                                    <td style="background-color: white;">{{ food.5 }}</td>
+                                    <td style="background-color: white;">{{ food.6 }}</td>
+                                    <td style="background-color: white;">{{ food.7|date:"Y-m-d" }}</td>
+                                    <td><input type="submit" value="Update Tables"  class="btn btn-lg" style="border-color: white; background-color: red;"> </td>
+
+                                </form> 
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>           
+</div>
+{% endblock %}
